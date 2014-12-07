@@ -1,0 +1,25 @@
+a{text-decoration:none;}
+header.banner{
+  background-image:url(../img/bg_img.gif);
+  background-repeat:no-repeat;
+  background-position:left bottom;
+  font-size:25px;
+  height:250px;
+  display:block;
+}
+article{
+  display:block;
+}
+.title{
+  margin-left:260px;
+  color:green;
+  font-weight:bold;
+}
+footer p.copyright{
+  float:left;
+  margin-top:0px;
+  font-size:0.9em;
+}
+footer{
+  display:block;
+}
