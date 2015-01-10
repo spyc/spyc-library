@@ -1,9 +1,11 @@
 <?php
+  ob_start();
   session_start();
   require_once "../../inc/right/login.inc";
   require_once "../../SilverSnake/jQuery.php.php";
   require_once "../../Connection/port.php";
-  $right=array("Tech","Admin","Chairperson","Librarian");
+  $right = array("Tech","Admin","Chairperson","Librarian");
+  $right[-1] = "root";
 ?><!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +34,7 @@
 </thead>
 <tbody>
 <?php
-  $sql=sprintf("SELECT * FROM `member` WHERE `jurisdiction` >=%d ORDER BY `jurisdiction`", $_SESSION["right"]);
+  $sql=sprintf("SELECT * FROM `member` WHERE `jurisdiction` >=%d ORDER BY `jurisdiction`", $_SESSION["user"]["right"]);
   $reply=mysql_query($sql,$port);
   if(mysql_num_rows($reply)){
     while($result=mysql_fetch_assoc($reply)){
@@ -52,7 +54,7 @@
 </article>
 <footer>
   <p class='copyright'>
-    Copyright © 2013 by Shatin Pui Ying College. All Rights Reserved.<br>
+    Copyright © 2013-2015 by Shatin Pui Ying College. All Rights Reserved.<br>
     版權所有　沙田培英中學
   </p>
 </footer>
